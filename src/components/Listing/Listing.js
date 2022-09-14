@@ -1,6 +1,8 @@
+import React from 'react';
 import './Listing.css';
 
-function Listing() {
+const Listing = () => {
+
   return (
     <div className='listing'>
       <h2>NYTreats - A New York Times News Reader</h2>
