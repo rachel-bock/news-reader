@@ -3,13 +3,11 @@ import './Listing.css';
 import Article from '../Article/Article';
 import Main from '../Main/Main';
 
-const Listing = ({headlines}) => {
+const Listing = ({headlines, selectStory}) => {
 
   const list = headlines.map((story, index) => {
     return(
-      <button key={index} onClick={() => {
-        return <Main story={story} />
-      }}>
+      <button key={index} onClick={() => selectStory(index)}>
         <Article news={story} />
       </button>
     ) 
