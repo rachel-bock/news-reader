@@ -10,10 +10,13 @@ class App extends Component {
     super();
     this.state = {
       headlines: [],
-
+      selectedArticle: {}
     }
   }
   
+  selectStory = (index) => {
+    this.setState({selectedArticle: this.state.headlines[index]});
+  }
 
   componentDidMount() {
     getTopStories()
@@ -30,7 +33,7 @@ class App extends Component {
         <Navigation />
         <div className='body'>
           <Listing headlines={this.state.headlines}/>
-          <Main />
+          <Main story={this.selectedArticle} selectStory={this.selectStory}/>
         </div>
       </div>
     );

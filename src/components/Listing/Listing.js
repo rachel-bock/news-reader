@@ -1,14 +1,17 @@
 import React from 'react';
 import './Listing.css';
 import Article from '../Article/Article';
+import Main from '../Main/Main';
 
 const Listing = ({headlines}) => {
 
   const list = headlines.map((story, index) => {
     return(
-      <div>
-        <Article news={story} key={index}/>
-      </div>
+      <button key={index} onClick={() => {
+        return <Main story={story} />
+      }}>
+        <Article news={story} />
+      </button>
     ) 
   });
 
