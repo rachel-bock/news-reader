@@ -1,9 +1,14 @@
 import './Main.css';
 
-function Main() {
+const Main = ({story}) => {
+
+  let photo;
+  let caption;
+  
+
   return (
     <div className='main'>
-      <h2>NYTreats - A New York Times News Reader</h2>
+      {/* <h2>{story.title}</h2> */}
       
     </div>
   );
