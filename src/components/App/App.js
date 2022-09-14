@@ -19,7 +19,7 @@ class App extends Component {
     getTopStories()
       .then(data => {
         console.log(data)
-        
+        this.setState({headlines: data.results});
       });
   }
  
@@ -29,7 +29,7 @@ class App extends Component {
         <h1>NYTreats - A New York Times News Reader</h1>
         <Navigation />
         <div className='body'>
-          <Listing />
+          <Listing headlines={this.state.headlines}/>
           <Main />
         </div>
       </div>

@@ -1,0 +1,8 @@
+.story {
+  border: .25rem solid black;
+  margin: .25rem;
+}
+
+.story:hover {
+  border: 0.25rem solid blue;
+}
