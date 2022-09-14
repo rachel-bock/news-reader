@@ -27,14 +27,13 @@ class App extends Component {
   }
  
   render() {
-    console.log(this.state.selectedArticle);
     return (
       <div className='App'>
-        <h1>NYTreats - A New York Times News Reader</h1>
+        <h1>NYTreats - A New York Times Top Stories Reader</h1>
         <Navigation />
         <div className='body'>
           <Listing headlines={this.state.headlines} selectStory={this.selectStory}/>
-          <Main story={this.state.selectedArticle} />
+          {this.state.selectedArticle && <Main story={this.state.selectedArticle} />}
         </div>
       </div>
     );
