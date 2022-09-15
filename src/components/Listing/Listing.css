@@ -1,8 +1,12 @@
 .listing {
   width: 35%; 
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
 }
 
 button {
   background-color: white;
-  border: none;
+  border: .25rem solid black;
+  margin: 0.25rem;
 }

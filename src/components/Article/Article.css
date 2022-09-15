@@ -1,6 +1,6 @@
 .story {
-  border: .25rem solid black;
-  margin: .25rem;
+  padding: 1rem;
+  margin: 0.25rem;
 }
 
 .story:hover {
