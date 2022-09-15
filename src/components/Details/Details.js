@@ -15,6 +15,7 @@ const Details = ({newsStory}) => {
       <h3>{newsStory.title}</h3>
       <p>{newsStory.byline}</p>
       <p>{newsStory.abstract}</p>
+      {newsStory.short_url && <a href={newsStory.short_url}>Read the full story on the NYT website</a>}
     </div>
   );
 }
