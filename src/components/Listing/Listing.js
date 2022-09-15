@@ -2,7 +2,7 @@ import React from 'react';
 import './Listing.css';
 import Article from '../Article/Article';
 
-const Listing = ({limitedStories, selectStory, handleSearch, search}) => {
+const Listing = ({limitedStories, selectStory}) => {
 
     const list = limitedStories.map((story, index) => {
     return(
@@ -14,17 +14,6 @@ const Listing = ({limitedStories, selectStory, handleSearch, search}) => {
 
   return (
     <div className='listing'>
-      <h3>Sections</h3>
-      <button onClick={(event)=> handleSearch('')}>All
-      </button>
-      <button onClick={(event)=> handleSearch('world')}>World Events
-      </button>
-      <button onClick={(event)=> handleSearch('business')}>Business
-      </button>
-      <button onClick={(event)=> handleSearch('climate')}>Climate
-      </button>
-      <button onClick={(event)=> handleSearch('opinion')}>Opinion
-      </button>
       <h3>News Stories</h3>
       {list}
     </div>

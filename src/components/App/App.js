@@ -38,9 +38,9 @@ class App extends Component {
     return (
       <div className='App'>
         <h1>NYTreats - A New York Times Top Stories Reader</h1>
-        <Navigation />
+        <Navigation handleSearch={this.handleSearch}/>
         <div className='body'>
-          <Listing limitedStories={this.state.limitedStories} selectStory={this.selectStory} handleSearch={this.handleSearch} search={this.state.search}/>
+          <Listing limitedStories={this.state.limitedStories} selectStory={this.selectStory}/>
           {this.state.selectedArticle && <Main story={this.state.selectedArticle} />}
         </div>
       </div>
