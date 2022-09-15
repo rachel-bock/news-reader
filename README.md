@@ -42,10 +42,10 @@ I used my notebook to draw out the revised wireframe as shown here.
 To run the project locally:
 
 - Open a terminal window.
-- Run 'git clone git@github.com:rachel-bock/news-reader.git'
-- Then 'cd news-reader' to change to the repository directory
-- Once in the repository directory, use 'npm install' or 'npm i' to install all dependencies
-- When ready, run 'npm start' to start the development server and open the project in your browser.
+- Run `git clone git@github.com:rachel-bock/news-reader.git`
+- Then `cd news-reader` to change to the repository directory
+- Once in the repository directory, use `npm install` or `npm i` to install all dependencies
+- When ready, run `npm start` to start the development server and open the project in your browser.
 
 If the project does not open in your default browser, open http://www.localhost:3000 to access the application.
 
