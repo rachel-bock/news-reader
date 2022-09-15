@@ -10,13 +10,18 @@ class App extends Component {
     super();
     this.state = {
       headlines: [],
-      selectedArticle: {}
+      selectedArticle: {}, 
+      search: ''
     }
-  }
+  };
   
+  handleSearch = (query) => {
+    this.setState({search: query});
+  };
+
   selectStory = (index) => {
     this.setState({selectedArticle: this.state.headlines[index]});
-  }
+  };
 
   componentDidMount() {
     getTopStories()
@@ -24,7 +29,7 @@ class App extends Component {
         console.log(data)
         this.setState({headlines: data.results});
       });
-  }
+  };
  
   render() {
     return (
@@ -32,12 +37,12 @@ class App extends Component {
         <h1>NYTreats - A New York Times Top Stories Reader</h1>
         <Navigation />
         <div className='body'>
-          <Listing headlines={this.state.headlines} selectStory={this.selectStory}/>
+          <Listing headlines={this.state.headlines} selectStory={this.selectStory} handleSearch={this.handleSearch} search={this.state.search}/>
           {this.state.selectedArticle && <Main story={this.state.selectedArticle} />}
         </div>
       </div>
     );
-  }    
+  };    
 }
 
 export default App;
