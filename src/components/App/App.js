@@ -10,6 +10,7 @@ class App extends Component {
     super();
     this.state = {
       headlines: [],
+      limitedStories: [],
       selectedArticle: {}, 
       search: ''
     }
@@ -17,10 +18,11 @@ class App extends Component {
   
   handleSearch = (query) => {
     this.setState({search: query});
+    this.setState({limitedStories: this.state.headlines.filter(story => story.section.includes(this.state.search))});
   };
 
   selectStory = (index) => {
-    this.setState({selectedArticle: this.state.headlines[index]});
+    this.setState({selectedArticle: this.state.limitedStories[index]});
   };
 
   componentDidMount() {
@@ -28,6 +30,7 @@ class App extends Component {
       .then(data => {
         console.log(data)
         this.setState({headlines: data.results});
+        this.setState({limitedStories: this.state.headlines});
       });
   };
  
@@ -37,7 +40,7 @@ class App extends Component {
         <h1>NYTreats - A New York Times Top Stories Reader</h1>
         <Navigation />
         <div className='body'>
-          <Listing headlines={this.state.headlines} selectStory={this.selectStory} handleSearch={this.handleSearch} search={this.state.search}/>
+          <Listing limitedStories={this.state.limitedStories} selectStory={this.selectStory} handleSearch={this.handleSearch} search={this.state.search}/>
           {this.state.selectedArticle && <Main story={this.state.selectedArticle} />}
         </div>
       </div>
