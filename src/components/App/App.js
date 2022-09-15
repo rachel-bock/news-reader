@@ -18,7 +18,7 @@ class App extends Component {
   
   handleSearch = (query) => {
     this.setState({search: query});
-    this.setState({limitedStories: this.state.headlines.filter(story => story.section.includes(this.state.search))});
+    this.setState({limitedStories: this.state.headlines.filter(story => story.section.includes(query))});
   };
 
   selectStory = (index) => {
@@ -30,7 +30,7 @@ class App extends Component {
       .then(data => {
         console.log(data)
         this.setState({headlines: data.results});
-        this.setState({limitedStories: this.state.headlines});
+        this.setState({limitedStories: data.results});
       });
   };
  
